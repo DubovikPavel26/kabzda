@@ -1,17 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 
 type AccordionPropsType = {
     title: string
-    collabsed: boolean
+    // collabsed: boolean
 }
 
-function Accordion(props:AccordionPropsType){
+function UncontrolledAccordion(props:AccordionPropsType){
     console.log("Accordion rendering")
+
+    const [collabsed, setCollabsed] = useState(true)
 
         return (
             <div>
-                <AccordionTitle title = {props.title} />
-                {!props.collabsed && <AccordionBody />}
+                <AccordionTitle title = {props.title} /> <button onClick={() =>setCollabsed(collabsed ? false : true)}>x</button>
+                {!collabsed && <AccordionBody />}
             </div>
         )
     }
@@ -20,6 +22,7 @@ function Accordion(props:AccordionPropsType){
 
 type AccordionTitlePropsTitle = {
     title: string
+
 }
 function AccordionTitle(props:AccordionTitlePropsTitle) {
     console.log("AccordionTitle rendering")
@@ -41,4 +44,4 @@ function AccordionBody() {
     );
 }
 
-export default Accordion;
+export default UncontrolledAccordion;
