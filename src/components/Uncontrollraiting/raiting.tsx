@@ -10,22 +10,25 @@ export function UncontrolRaiting(props:RaitingPropsType) {
     const [number, setNumber] = useState(0)
         return (
             <div>
-                <Star selected={number >0}/> <button onClick={()=>setNumber(1)}>1</button>
-                <Star selected={number >1}/> <button onClick={()=>setNumber(2)}>2</button>
-                <Star selected={number >2}/> <button onClick={()=>setNumber(3)}>3</button>
-                <Star selected={number >3}/> <button onClick={()=>setNumber(4)}>4</button>
-                <Star selected={number >4}/> <button onClick={()=>setNumber(5)}>5</button>
+                <Star selected={number >0} setValue={() => setNumber (1)} />
+                <Star selected={number >1} setValue={() => setNumber (2)} />
+                <Star selected={number >2} setValue={() => setNumber (3)} />
+                <Star selected={number >3} setValue={() => setNumber (4)} />
+                <Star selected={number >4} setValue={() => setNumber (5)} />
             </div>
         )
     }
 
 type StarPropsType = {
     selected: boolean
+    setValue: () => void
 
 }
 export function Star(props:StarPropsType) {
     console.log("Star rendering")
-    return props.selected ? <span><b>star </b></span> : <span>star </span>
+    return <span onClick={() => props.setValue()}>
+        {props.selected ? <b> star</b> : " star"}
+    </span>
 
 }
 

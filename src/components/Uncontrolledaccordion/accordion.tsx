@@ -9,10 +9,11 @@ function UncontrolledAccordion(props:AccordionPropsType){
     console.log("Accordion rendering")
 
     const [collabsed, setCollabsed] = useState(true)
+    const setCollabsedHandler = () =>setCollabsed(collabsed ? false : true)
 
         return (
             <div>
-                <AccordionTitle title = {props.title} /> <button onClick={() =>setCollabsed(collabsed ? false : true)}>x</button>
+                <AccordionTitle title = {props.title} setCollabsedHandler={setCollabsedHandler}/>
                 {!collabsed && <AccordionBody />}
             </div>
         )
@@ -22,12 +23,13 @@ function UncontrolledAccordion(props:AccordionPropsType){
 
 type AccordionTitlePropsTitle = {
     title: string
+    setCollabsedHandler: () => void
 
 }
 function AccordionTitle(props:AccordionTitlePropsTitle) {
     console.log("AccordionTitle rendering")
     return (
-        <div><h3>{props.title}</h3></div>
+        <div><h3 onClick={() => {props.setCollabsedHandler()}}>{props.title}</h3></div>
     );
 }
 
