@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useReducer, useState} from "react";
+import AccordionReducer, {ToogleCollabsedAC} from "../../state/accordion-reducer";
 
 type AccordionPropsType = {
     title: string
@@ -8,8 +9,9 @@ type AccordionPropsType = {
 function UncontrolledAccordion(props:AccordionPropsType){
     console.log("Accordion rendering")
 
-    const [collabsed, setCollabsed] = useState(true)
-    const setCollabsedHandler = () =>setCollabsed(collabsed ? false : true)
+    const [collabsed, dispatch] = useReducer(AccordionReducer,true)
+    // const setCollabsedHandler = () =>setCollabsed(collabsed ? false : true)
+    const setCollabsedHandler = () => dispatch(ToogleCollabsedAC())
 
         return (
             <div>

@@ -18,7 +18,7 @@ function App() {
     const OnClickCallbek = () => {
         console.log("ggg")
     }
-    const [selectValue, setSelectValue] = useState('1')
+    const [selectValue, setselectValue] = useState('1')
 
 
     return (
@@ -26,8 +26,8 @@ function App() {
             {/*<PageTitle title={"Hello, samurai! Let's go!"}/>*/}
             {/*<PageTitle title={"Users"}/>*/}
 
-            {/*/!*<UncontrolledAccordion title={"Menu"} />*!/*/}
-            {/*/!*<UncontrolledAccordion title={"Users"}/>*!/*/}
+            <UncontrolledAccordion title={"Menu"} />
+            <UncontrolledAccordion title={"Users"}/>
 
             {/*<Accordion title={"Menu"} changeAccordion={setAccordionCollabsed} collabsed={accordionCollabsed}*/}
             {/*           items={[{title: "Pasha", value: 1}, {title: "Dima", value: 2},*/}
@@ -47,7 +47,7 @@ function App() {
             {/*<UncontrillInput/>*/}
             {/*<Input/>*/}
             <Select value={selectValue}
-                    onChange={setSelectValue}
+                    onChange={setselectValue}
                     items={
                 [
                     {value: "1", title: "Minsk"},
