@@ -1,0 +1,12 @@
+.select span.main{
+border: 1px solid black;
+}
+
+.items{
+    border: 1px solid red;
+    position: absolute;
+}
+
+.item.selected {
+    background-color: violet;
+}
