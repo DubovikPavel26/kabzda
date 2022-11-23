@@ -9,6 +9,7 @@ import OnOff from "./components/OnOff/OnOff";
 import UncontrillInput from "./components/Uncontrollinput/UncontrillInput";
 import Input from "./components/Input/Input";
 import Select from "./components/Select/select";
+import ReactMemo from "./ReactMemo/ReactMemo";
 
 function App() {
     console.log("App rendering")
@@ -54,6 +55,8 @@ function App() {
                     {value: "2", title: "Grodno"},
                     {value: "3", title: "Vitebsk"}
                 ]}/>
+
+            <ReactMemo/>
         </div>
     );
 }
