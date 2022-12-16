@@ -27,8 +27,8 @@ function App() {
             {/*<PageTitle title={"Hello, samurai! Let's go!"}/>*/}
             {/*<PageTitle title={"Users"}/>*/}
 
-            <UncontrolledAccordion title={"Menu"} />
-            <UncontrolledAccordion title={"Users"}/>
+            {/*<UncontrolledAccordion title={"Menu"} />*/}
+            {/*<UncontrolledAccordion title={"Users"}/>*/}
 
             {/*<Accordion title={"Menu"} changeAccordion={setAccordionCollabsed} collabsed={accordionCollabsed}*/}
             {/*           items={[{title: "Pasha", value: 1}, {title: "Dima", value: 2},*/}
@@ -43,18 +43,18 @@ function App() {
             {/*<Raiting value={4} />*/}
             {/*<Raiting value={5} />*/}
 
-            {/*<UncontrolOnOff onChange={setOn}/>*/}
-            {/*<OnOff on={on} setOn={setOn}/>*/}
-            {/*<UncontrillInput/>*/}
-            {/*<Input/>*/}
-            <Select value={selectValue}
-                    onChange={setselectValue}
-                    items={
-                [
-                    {value: "1", title: "Minsk"},
-                    {value: "2", title: "Grodno"},
-                    {value: "3", title: "Vitebsk"}
-                ]}/>
+            {/*/!*<UncontrolOnOff onChange={setOn}/>*!/*/}
+            {/*/!*<OnOff on={on} setOn={setOn}/>*!/*/}
+
+            {/*/!*<Input/>*!/*/}
+            {/*<Select value={selectValue}*/}
+            {/*        onChange={setselectValue}*/}
+            {/*        items={*/}
+            {/*    [*/}
+            {/*        {value: "1", title: "Minsk"},*/}
+            {/*        {value: "2", title: "Grodno"},*/}
+            {/*        {value: "3", title: "Vitebsk"}*/}
+            {/*    ]}/>*/}
 
             <ReactMemo/>
         </div>

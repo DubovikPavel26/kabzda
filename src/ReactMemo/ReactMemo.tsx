@@ -1,26 +1,47 @@
 import React, {useState} from 'react';
 
+type CounterPropsType = {
+    count: number
+}
+
+type UsersPropsType = {
+    users: Array<string>
+}
+
+const Counter = (props: CounterPropsType) => {
+    return (
+        <div>
+            {props.count}
+        </div>
+    )
+}
+
+const UsersSecret = (props: UsersPropsType) => {
+    return (
+        <div>
+            {props.users.map((el, index) => <div key={index}>{el}</div>)}
+        </div>
+    )
+}
+
+const Users = React.memo(UsersSecret)
+
 const ReactMemo = () => {
-    const [a, setA] = useState(5)
-    const [b, setB] = useState(5)
-
-    let ResultA = 1;
-    let ResultB = 1;
-
-    for(let i = 1; i <= a; i++ ){
-        ResultA = ResultA * i
+    const [counter, setCounter] = useState(2)
+    const [users, setUsers] = useState(["Pasha", "Dima", "Sasha"])
+    const onClickHandkerCount = () => {
+        setCounter(counter + 1)
     }
 
-    for(let i = 1; i <= b; i++ ){
-        ResultB = ResultB * i
+    const onClickHandkerUser = () => {
+       setUsers([...users, 'Sveta'])
     }
     return (
         <div>
-            <input type="text" value={a} onChange={(event) => {setA(+event.currentTarget.value)}}/>
-            <input type="text" value={b} onChange={(event) => {setB(+event.currentTarget.value)}}/>
-            <hr/>
-            ResultA: {ResultA}
-            ResultB: {ResultB}
+            <button onClick={onClickHandkerCount}>+ count</button>
+            <button onClick={onClickHandkerUser}>+ user</button>
+            <Counter count={counter}/>
+            <Users users={users}/>
         </div>
     );
 };
